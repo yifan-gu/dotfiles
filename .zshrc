@@ -19,3 +19,6 @@ zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 fpath=(~/.zsh $fpath)
 
 autoload -Uz compinit && compinit
+autoload -U select-word-style
+select-word-style bash
+PROMPT='%m:%1~ %n$ '
