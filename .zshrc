@@ -70,7 +70,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf)
+plugins=(git fzf zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,6 +113,8 @@ HISTFILESIZE=10000000
 HISTSIZE=10000000
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+#zstyle ':git:*' script ~/.zsh/git-completion.bash
+
 fpath=(~/.zsh $fpath)
 
 autoload -Uz compinit && compinit
