@@ -1,2 +1,2 @@
-My itemr2 Profile
+My dotfiles for zsh, iterm2 and so on
 ========================
