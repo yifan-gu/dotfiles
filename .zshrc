@@ -108,6 +108,7 @@ eval $(gdircolors)
 alias ls="gls --color=auto"
 alias ll="ls -al"
 alias l="ls"
+alias ag='ag --pager="less -MIRFX"'
 
 HISTFILESIZE=10000000
 HISTSIZE=10000000
@@ -125,3 +126,8 @@ PROMPT='%m:%1~ %n$ '
 #export GPG_TTY="$(tty)"
 #export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 #gpgconf --launch gpg-agent
+
+# Dir alias
+alias yifan-github="cd $HOME/github.com/yifan-gu"
+alias dotfiles="cd $HOME/github.com/yifan-gu/dotfiles"
+alias kindle="cd $HOME/org/roam/Kindle/clippings"
