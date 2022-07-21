@@ -1,0 +1,10 @@
+[user]
+	name = Yifan
+	email = guyifan1121@gmail.com
+	signingKey = 509E84E4EB50B8C80ABAD1290E86F9240CE4D616
+[gpg]
+	program = gpg
+[pager]
+	branch = false
+[core]
+	pager = less -FX
