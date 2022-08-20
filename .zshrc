@@ -121,13 +121,41 @@ fpath=(~/.zsh $fpath)
 autoload -Uz compinit && compinit
 autoload -U select-word-style
 select-word-style bash
-PROMPT='%m:%1~ %n$ '
+
+
+# Find and set branch name var if in git repository.
+function git_branch_name()
+{
+  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+  if [[ $branch == "" ]];
+  then
+    :
+  else
+    echo '('$branch') '
+  fi
+}
+
+COLOR_DEF=$'\e[0m'
+#COLOR_GIT=$'\e[38;5;243m'
+#COLOR_GIT=$'\e[1;32m'
+#COLOR_USR=$'\e[38;5;243m'
+#COLOR_DIR=$'\e[38;5;197m'
+#COLOR_GIT=$'\e[38;5;39m'
+# Enable substitution in the prompt.
+setopt PROMPT_SUBST
+
+# Config for prompt. PS1 synonym.
+#PROMPT='%m:%1~ %n$ '
+PROMPT='%m:%1~ $(git_branch_name)$ '
 
 #export GPG_TTY="$(tty)"
 #export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 #gpgconf --launch gpg-agent
 
 # Dir alias
+alias playground="cd $HOME/gopher/src/playground"
 alias yifan-github="cd $HOME/github.com/yifan-gu"
 alias dotfiles="cd $HOME/github.com/yifan-gu/dotfiles"
-alias kindle="cd $HOME/org/roam/Kindle/clippings"
+alias kindle="cd $HOME/org/Kindle/clippings"
+alias project="cd $HOME/org/Projects"
+alias blnt="cd $HOME/github.com/yifan-gu/blueNote"
