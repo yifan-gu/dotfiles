@@ -6,3 +6,9 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 echo "Installing fzf..."
 brew install fzf
 
+echo "Install coreutils"
+brew install coreutils
+
+echo "Install Silver Search"
+brew install the_silver_searcher
+
