@@ -12,3 +12,5 @@ brew install coreutils
 echo "Install Silver Search"
 brew install the_silver_searcher
 
+echo "Install trash"
+brew install trash
